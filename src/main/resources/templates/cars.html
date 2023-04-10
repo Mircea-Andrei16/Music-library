@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+<style>
+	
+	.product-img{
+  width: 100%;
+  height: 200px;
+   border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+.product-img2{
+	width: 100%;
+  height: 200px;
+  transform: rotate(180deg);
+  margin-bottom: 0.5rem;
+}
+.product-img1{
+	width: 100%;
+  height: 200px;
+  filter: blur(2px);
+  margin-bottom: 0.5rem;
+}
+  .section-title{
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.category-title{
+  font-size: 3.5rem;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+.shop{
+  margin-top: 2rem;
+}
+/* Shop content */
+.shop-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(100px,auto));
+  gap: 1.5rem;
+}
+.product-box{
+  position: relative;
+  margin-right: 1.5rem;
+}
+.product-box:hover{
+  border: 1px solid black; 
+  transition: 0.4s;
+}
+.product-title{
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.price{
+  font-weight: 500;
+}
+.add-cart{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--text-color);
+  color: var(--bg-color);
+  padding: 10px;
+  cursor: pointer;
+}
+.add-doc{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--text-color);
+  color: var(--bg-color);
+  padding: 10px;
+  cursor: pointer;
+}
+.add-cart:hover{
+  background: hsl(249 , 32%, 17%);
+}
+.description{
+	padding: 0.5rem;
+}
+@media screen and (max-device-width: 600px) {
+	.shop-content{
+		grid-template-columns: repeat(2,minmax(100px,auto));
+	}
+}
+</style>
+</head>
+<body style="padding-top:0px;">
+
+<nav class="navbar navbar-inverse navbar_reset">
+    <div class="navbar-header">
+        <a class="navbar-brand brand" th:href="@{/}">RentCar</a>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="repere"><a th:href="@{/cars}">Cars</a></li>
+            <li class="repere"><a th:href="@{/contact}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<section class="shop container">
+      <!-- Content -->
+      <h2 class="category-title">Rent Cars</h2>
+      <div class="shop-content">
+        <!-- Box 1 -->
+        <div class="product-box">
+          <img src="img/1.jpg" alt="" class="product-img">
+          <h2 class="product-title">Lamborghini</h2>
+          <div class="description">
+            <div>Color: Orange</div>
+          </div>
+        </div>
+        <!-- Box 2 -->
+        <div class="product-box">
+          <img src="img/2.jpg" alt="" class="product-img">
+          <h2 class="product-title">Mercedes</h2>
+          <div class="description">
+            <div>Color: Grey</div>
+          </div>
+        </div>
+        <!-- Box 3 -->
+        <div class="product-box">
+          <img src="img/3.jpg" alt="" class="product-img">
+          <h2 class="product-title">Corvette</h2>
+          <div class="description">
+            <div>Color: blue</div>
+          </div>
+        </div>
+        <!-- Box 4 -->
+        <div class="product-box">
+          <img src="img/4.jpg" alt="" class="product-img">
+          <h2 class="product-title">BMW</h2>
+          <div class="description">
+            <div>Color: blue</div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="shop-content">
+        <!-- Box 1 -->
+        <div class="product-box">
+          <img src="img/5.jpg" alt="" class="product-img1">
+          <h2 class="product-title">Mercedes</h2>
+          <div class="description">
+            <div>Color: White</div>
+          </div>
+        </div>
+        <!-- Box 2 -->
+        <div class="product-box">
+          <img src="img/6.jpg" alt="" class="product-img1">
+          <h2 class="product-title">Mercedes</h2>
+          <div class="description">
+            <div>Color: Red</div>
+          </div>
+        </div>
+        <!-- Box 3 -->
+        <div class="product-box">
+          <img src="img/7.jpg" alt="" class="product-img1">
+          <h2 class="product-title">Masserati</h2>
+          <div class="description">
+            <div>Color: blue</div>
+          </div>
+        </div>
+        <!-- Box 4 -->
+        <div class="product-box">
+          <img src="img/8.jpg" alt="" class="product-img2">
+          <h2 class="product-title">Audi</h2>
+          <div class="description">
+            <div>Color: blue</div>
+          </div>
+        </div>
+      </div>
+      </section>
+</body>
+</html>

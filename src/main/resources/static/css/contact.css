@@ -1,0 +1,26 @@
+.harta{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+.titluh{
+     color:#FF8800;
+     font-weight:bold;
+     font-size:30px;
+
+ }
+.continutp{
+    padding-top:10px;
+    color: white;
+    font-weight:200;
+    font-size:20px;
+}
+
+#demo{
+
+    padding-top:10px;
+    color: white;
+    font-weight:200;
+    font-size:20px;
+}
